@@ -1,6 +1,7 @@
 HELP.md
 target/
 !allure-results
+!.allure
 !**/src/main/**/target/
 !**/src/test/**/target/
 
