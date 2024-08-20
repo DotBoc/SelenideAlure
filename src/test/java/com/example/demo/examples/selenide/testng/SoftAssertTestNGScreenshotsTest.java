@@ -35,7 +35,7 @@ public class SoftAssertTestNGScreenshotsTest extends AbstractSoftAssertTestNGTes
     /**
      * Expected to throw: com.codeborne.selenide.ex.SoftAssertionError
      */
-    @Test(enabled = false)
+    @Test
     public void shouldTakeScreenshotForSoftAsserts() {
         $("h666").shouldBe(visible);
         $$("#radioButtons input").shouldHave(size(888));
