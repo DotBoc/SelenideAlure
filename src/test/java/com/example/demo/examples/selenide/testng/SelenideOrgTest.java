@@ -33,8 +33,8 @@ public class SelenideOrgTest extends BaseTestNGTest {
     @Severity(MINOR)
     @Owner("John Doe")
     @Link(name = "Website", url = "https://dev.example.com/")
-    @Issue("AUTH-123")
-    @TmsLink("TMS-456")
+    @Issue("ERMIS-123")
+    @TmsLink("ERMIS-456")
     public void failingMethod() {
         $$("#user-tags .tag").shouldHave(sizeGreaterThan(Integer.MAX_VALUE));
         $("#missing-button").click();
