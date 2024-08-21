@@ -26,7 +26,7 @@ abstract class BaseTest {
             .withExposedPorts(8080)
             .withStartupTimeout(Duration.ofMinutes(1));
     @BeforeSuite
-    static void beforeSuite() throws Exception {
+    static void beforeSuite(){
         petClinicContainer.start();
         port = petClinicContainer.getMappedPort(8080);
         hostname = petClinicContainer.getHost();

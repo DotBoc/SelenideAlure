@@ -5,13 +5,11 @@ import com.codeborne.selenide.testng.TextReport;
 import com.example.demo.examples.testcontainers.pages.HomePage;
 import io.qameta.allure.*;
 import io.qameta.allure.testng.Tag;
-import org.junit.jupiter.api.DisplayName;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static io.qameta.allure.SeverityLevel.CRITICAL;
-import static io.qameta.allure.SeverityLevel.MINOR;
 
 @Testcontainers
 @Listeners({TextReport.class})
@@ -29,8 +27,7 @@ public class PetClinicTest extends BaseTest {
     @Issue("ERMIS-46048")
     @TmsLink("ERMIS-46032")
     public void userCanSearch() {
-        new HomePage().goToFindOwners();
-        new HomePage().goToError();
+        new HomePage().goToFindOwners().goToError();
     }
 
     @Test
@@ -45,8 +42,7 @@ public class PetClinicTest extends BaseTest {
     @Issue("ERMIS-46048")
     @TmsLink("ERMIS-46032")
     public void veterinarianAddition() {
-        new HomePage().goToVeterinarians();
-        new HomePage().goToError();
+        new HomePage().goToVeterinarians().goToError();
     }
 
 }
