@@ -2,21 +2,20 @@ package com.example.demo.examples.testcontainers.tests;
 
 
 import com.codeborne.selenide.testng.TextReport;
-import com.example.demo.examples.testcontainers.containers.initializers.UITestBase;
+import com.example.demo.examples.testcontainers.containers.initializers.UIBaseConfig;
 import com.example.demo.examples.testcontainers.pages.HomePage;
 import io.qameta.allure.*;
 import io.qameta.allure.testng.Tag;
-import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 
-@Testcontainers
 @Listeners({TextReport.class})
-public class PetClinicTest extends UITestBase {
+public class PetClinicTest extends UIBaseConfig {
 
-    @Test
+    @Test(groups = {"petClinic", "UI"})
     @Epic("Pet Clinic")
     @Feature("Veterinarians")
     @Story("Veterinarian CRUD operations")
@@ -28,11 +27,12 @@ public class PetClinicTest extends UITestBase {
     @Issue("ERMIS-46048")
     @TmsLink("ERMIS-46032")
     public void userCanSearch() {
+        open("/");
         new HomePage().goToFindOwners().goToError();
         new HomePage().goToFindOwners().goToError();
     }
 
-    @Test
+    @Test(groups = {"petClinic", "UI"})
     @Epic("Pet Clinic")
     @Feature("Veterinarians")
     @Story("Veterinarian CRUD operations")
