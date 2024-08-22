@@ -2,6 +2,7 @@ package com.example.demo.examples.testcontainers.tests;
 
 
 import com.codeborne.selenide.testng.TextReport;
+import com.example.demo.examples.testcontainers.containers.initializers.UITestBase;
 import com.example.demo.examples.testcontainers.pages.HomePage;
 import io.qameta.allure.*;
 import io.qameta.allure.testng.Tag;
@@ -13,7 +14,7 @@ import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 @Testcontainers
 @Listeners({TextReport.class})
-public class PetClinicTest extends BaseTest {
+public class PetClinicTest extends UITestBase {
 
     @Test
     @Epic("Pet Clinic")
@@ -27,6 +28,7 @@ public class PetClinicTest extends BaseTest {
     @Issue("ERMIS-46048")
     @TmsLink("ERMIS-46032")
     public void userCanSearch() {
+        new HomePage().goToFindOwners().goToError();
         new HomePage().goToFindOwners().goToError();
     }
 
