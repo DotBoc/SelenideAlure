@@ -9,7 +9,6 @@ import io.qameta.allure.testng.Tag;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 
 @Listeners({TextReport.class})
@@ -27,7 +26,6 @@ public class PetClinicTest extends UIBaseConfig {
     @Issue("ERMIS-46048")
     @TmsLink("ERMIS-46032")
     public void userCanSearch() {
-        open("/");
         new HomePage().goToFindOwners().goToError();
         new HomePage().goToFindOwners().goToError();
     }

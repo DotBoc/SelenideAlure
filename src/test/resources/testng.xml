@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="false" thread-count="1" verbose="10">
+    <listeners>
+        <listener class-name="com.codeborne.selenide.testng.TextReport"/>
+    </listeners>
+    <test parallel="false" verbose="2" preserve-order="true" name="PetClinic UI Tests">
+        <groups>
+            <run>
+                <include name="petClinic"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.demo.examples.testcontainers.tests.PetClinicTest"/>
+        </classes>
+    </test>
+</suite>
