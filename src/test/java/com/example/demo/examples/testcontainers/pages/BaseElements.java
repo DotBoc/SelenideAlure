@@ -22,14 +22,14 @@ public class BaseElements {
         return $("a[title='trigger a RuntimeException to see how it is handled']");
     }
 
-    public BaseElements goToHome(){
+    public HomePage goToHome(){
         homeLink().click();
-        return this;
+        return new HomePage();
     }
 
-    public BaseElements goToFindOwners(){
+    public FindOwners goToFindOwners(){
         findOwnersLink().click();
-        return this;
+        return new FindOwners();
     }
 
     public BaseElements goToVeterinarians(){

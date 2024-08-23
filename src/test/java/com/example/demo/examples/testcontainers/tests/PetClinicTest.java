@@ -25,9 +25,23 @@ public class PetClinicTest extends UIBaseConfig {
     @Severity(CRITICAL)
     @Issue("ERMIS-46048")
     @TmsLink("ERMIS-46032")
-    public void userCanSearch() {
-        new HomePage().goToFindOwners().goToError();
-        new HomePage().goToFindOwners().goToError();
+    public void userCanSearchOwners() {
+        new HomePage().goToFindOwners().searchForOwners();
+    }
+
+    @Test(groups = {"petClinic", "UI"})
+    @Epic("Pet Clinic")
+    @Feature("Veterinarians")
+    @Story("Veterinarian CRUD operations")
+    @Description("This test adds a veterinarian using UI and asserts that addition")
+    @Owner("gtrifyll")
+    @Tag("UI")
+    @Tag("SMK")
+    @Severity(CRITICAL)
+    @Issue("ERMIS-46048")
+    @TmsLink("ERMIS-46032")
+    public void userCanAddNewOwners() {
+        new HomePage().goToFindOwners().addNewOwner();
     }
 
     @Test(groups = {"petClinic", "UI"})
