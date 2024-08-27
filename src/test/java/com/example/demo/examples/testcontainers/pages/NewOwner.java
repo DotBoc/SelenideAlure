@@ -33,4 +33,39 @@ public class NewOwner {
     private SelenideElement addOwnerButton() {
         return $("button[type='submit']");
     }
+
+    public NewOwner setFirstName(String firstName){
+        firstNameInput().setValue(firstName);
+        return this;
+    }
+
+    public NewOwner setLastName(String lastName){
+        lastNameInput().setValue(lastName);
+        return this;
+    }
+
+    public NewOwner setAddress(String address){
+        addressInput().setValue(address);
+        return this;
+    }
+
+    public NewOwner setCity(String city){
+        cityInput().setValue(city);
+        return this;
+    }
+
+    public NewOwner setTelephone(String telephone){
+        telephoneInput().setValue(telephone);
+        return this;
+    }
+
+
+    public NewOwner addOwner(){
+        addOwnerButton().click();
+        return this;
+    }
+
+    public void addNewOwner(String firstName,String lastName,String address,String city,String telephone){
+        setFirstName(firstName).setLastName(lastName).setAddress(address).setCity(city).setTelephone(telephone).addOwner();
+    }
 }

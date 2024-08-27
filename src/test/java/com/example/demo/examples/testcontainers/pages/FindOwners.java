@@ -22,19 +22,17 @@ public class FindOwners extends BaseElements {
         return $("a[class='btn btn-primary']");
     }
 
-    public Owners searchForOwnerWithLastName(String lastName){
+    public void searchForOwnerWithLastName(String lastName){
         lastNameInput().setValue(lastName);
-        return searchForOwners();
+        searchForOwners();
     }
 
-    public Owners searchForOwners(){
+    public void searchForOwners(){
         findOwnerButton().click();
-        return new Owners();
     }
 
-    public NewOwner addNewOwner(){
+    public void addNewOwner(){
         addOwnerLink().click();
-        return new NewOwner();
     }
 
 }
