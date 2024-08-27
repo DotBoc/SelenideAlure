@@ -29,6 +29,9 @@ public class PetClinicTest extends UIBaseConfig {
     @Issue("ERMIS-46048")
     @TmsLink("ERMIS-46032")
     public void userCanCreateOwners() {
+        Allure.getLifecycle().updateTestCase(result -> {
+            result.setName("User can Create Owners");
+        });
         new HomePage().goToFindOwners().addNewOwner();
         new NewOwner().addNewOwner("testFirst","testLast","testAdd","testCity","1234567890");
         new Owner().assertOwnerInfo("testFirst testLast","testAdd","testCity","1234567890");
@@ -46,6 +49,9 @@ public class PetClinicTest extends UIBaseConfig {
     @Issue("ERMIS-46048")
     @TmsLink("ERMIS-46032")
     public void userCanReadOwners() {
+        Allure.getLifecycle().updateTestCase(result -> {
+            result.setName("User can Read Owners");
+        });
         new HomePage().goToFindOwners().searchForOwners();
         new Owners().assertOwner("Lucky",2);
         new Owners().assertOwner("Eduardo Rodriquez 	2693 Commerce St. 	McFarland 	6085558763 	Jewel Rosy",1);
